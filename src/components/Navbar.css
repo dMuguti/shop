@@ -1,39 +1,43 @@
+/* Navbar.css */
+
+/* Navbar.css */
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f2f2f2;
-    padding: 10px 20px;
+    padding: 0.5em 1em;
+    background: url(https://assets.startbootstrap.com/img/meta/products/twitter/twitter-image-grayscale.png);
+    box-shadow: 0 2px 15px 0 rgba(0,0,0,.1);
+    width: 100%;
+    position: fixed; /* Keep navbar fixed on top */
+    top: 0; /* Position it at the top of the viewport */
+    z-index: 999; /* Keep it on top of other elements */
+  }
+  
+  .nav-logo {
+    font-size: 1.5em;
+    color: white;
   }
   
   .nav-logo a {
-    font-size: 20px;
-    font-weight: bold;
-    color: #FF0066;
     text-decoration: none;
+    color: white;
+    font-weight: bold;
   }
   
   .nav-links {
     display: flex;
-    align-items: center;
-  }
-  
-  .nav-links-left {
-    margin-right: auto;
-  }
-  
-  .nav-links-right {
-    display: flex;
-    align-items: center;
+    gap: 1em;
   }
   
   .nav-links a {
-    margin-left: 10px;
-    color: #0066FF;
     text-decoration: none;
+    color: white;
+    transition: color 0.3s ease-in-out;
   }
   
   .nav-links a:hover {
-    text-decoration: underline;
+    color: #ff6e7f;
   }
   
