@@ -5,7 +5,9 @@ import SignUpPage from './components/SignUpPage';
 import Posts from './components/Posts';
 import AboutPage from './components/AboutPage';
 import Navbar from './components/Navbar';
+import View from './components/view';
 import './App.css';
+
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/posts" element={<Posts />} />
+          <Route path="/view" element={<View />} />
         </Routes>
       </div>
     </Router>
