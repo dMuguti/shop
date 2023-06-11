@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login.css';
+import back from '../back.jpg';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -29,7 +30,7 @@ const LoginPage = () => {
 
       if (data.logged_in) {
         console.log(data.user); // User data
-        navigate('/view'); // Redirect to the view page
+        navigate('/view'); 
       }
     } catch (error) {
       console.error('Login error', error);
@@ -37,27 +38,35 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="login-page">
-      <h2>Welcome to our site!</h2>
-      <p>Log in</p>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit">Login</button>
-      </form>
-    </div>
+    <section className='login'>
+      <div className='container'>
+        <div className='backImg'>
+          <img src={back} alt='' />
+          <div className='text'>
+            <h3>Login</h3>
+            <h1>My account</h1>
+          </div>
+        </div>
+
+        <form onSubmit={handleSubmit}>
+          <span>Username or email address *</span>
+          <input 
+            type='text' 
+            required 
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <span>Password *</span>
+          <input 
+            type='password' 
+            required 
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button className='button' type="submit">Log in</button>
+        </form>
+      </div>
+    </section>
   );
 };
 

@@ -42,8 +42,7 @@ const View = () => {
 
   const handleCommentSubmit = () => {
     setShowComment(false);
-    // Logic to handle the submitted comment, such as sending it to the server or updating the state
-    // You can access the comment value using the `comment` state variable
+    
   };
 
   const handleSubmit = async (event) => {
@@ -53,7 +52,7 @@ const View = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: 'Bearer YOUR_AUTH_TOKEN', // Replace with your actual authentication token
+          Authorization: 'Bearer YOUR_AUTH_TOKEN', 
         },
         body: JSON.stringify({ title, body }),
       });

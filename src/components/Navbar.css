@@ -10,9 +10,9 @@
     background: url(https://assets.startbootstrap.com/img/meta/products/twitter/twitter-image-grayscale.png);
     box-shadow: 0 2px 15px 0 rgba(0,0,0,.1);
     width: 100%;
-    position: fixed; /* Keep navbar fixed on top */
-    top: 0; /* Position it at the top of the viewport */
-    z-index: 999; /* Keep it on top of other elements */
+    position: fixed; 
+    top: 0; 
+    z-index: 999; 
   }
   
   .nav-logo {
