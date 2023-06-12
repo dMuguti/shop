@@ -55,6 +55,27 @@ const View = () => {
     setComment('');
   };
 
+  const handleDelete = async (post) => {
+    try {
+      const response = await fetch(`http://localhost:9292/posts/${post.id}`, {
+        method: 'DELETE',
+        headers: {
+          Authorization: 'Bearer YOUR_AUTH_TOKEN', // Replace with your actual authentication token
+        },
+      });
+
+      if (response.ok) {
+        const updatedPosts = posts.filter((p) => p.id !== post.id);
+        setPosts(updatedPosts);
+        setSelectedPost(null);
+      } else {
+        throw new Error('Failed to delete post');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -62,12 +83,14 @@ const View = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: 'Bearer YOUR_AUTH_TOKEN', 
+          Authorization: 'Bearer YOUR_AUTH_TOKEN',
         },
         body: JSON.stringify({ title, body }),
       });
       const newPost = await response.json();
       setPosts((oldPosts) => [...oldPosts, newPost]);
+      setTitle('');
+      setBody('');
     } catch (error) {
       console.error('Failed to create post', error);
     }
@@ -75,28 +98,31 @@ const View = () => {
 
   return (
     <div>
-        <form onSubmit={handleSubmit} className="add-post-form">
-          <label>Title:</label>
-         <input
+      <form onSubmit={handleSubmit} className="add-post-form">
+        <label>Title:</label>
+        <input
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Title"
-         />
-          <label>Body:</label>
-           <textarea
-           value={body}
-           onChange={(e) => setBody(e.target.value)}
-            placeholder="Body"
         />
-          <button type="submit">Add Post</button>
-       </form>
+        <label>Body:</label>
+        <textarea
+          value={body}
+          onChange={(e) => setBody(e.target.value)}
+          placeholder="Body"
+        />
+        <button type="submit">Add Post</button>
+      </form>
       {selectedPost ? (
         <div className="post-details">
           <h2 className="popup-title">{selectedPost.title}</h2>
           <p className="popup-body">{selectedPost.body}</p>
           <button onClick={() => setSelectedPost(null)} className="popup-button">
             Back
+          </button>
+          <button onClick={() => handleDelete(selectedPost)} className="popup-button">
+            Delete
           </button>
           <div className="like-section">
             <button onClick={() => handleLike(selectedPost)} className="like-button">
