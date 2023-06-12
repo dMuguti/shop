@@ -132,4 +132,147 @@
   
   .add-post-form label {
     font-weight: bold;
+  }.add-post-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em;
   }
+  
+  .add-post-form input, .add-post-form textarea {
+    padding: 10px;
+    margin-bottom: 1em;
+    width: 80%;
+  }
+  
+  .add-post-form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .post-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .post-card {
+    width: 200px;
+    height: 150px;
+    background-color: #f2f2f2;
+    margin: 1em;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .post-details {
+    margin: 1em;
+  }
+  
+  .like-section, .comment-section {
+    margin: 1em 0;
+  }
+  
+  .comment-form, .comment-display {
+    margin-top: 1em;
+  }
+  
+  .popup-button, .like-button, .comment-button, .comment-submit {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-right: 1em;
+  }
+  .post-details {
+    background-color: #f4f4f4;
+    padding: 20px;
+    width: 70%;
+    margin: 0 auto;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    border-radius: 10px;
+  }
+  
+  .popup-title {
+    text-align: center;
+  }
+  
+  .popup-body {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .like-section, .comment-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .comment-display {
+    margin-top: 20px;
+  }
+  .post-details {
+    background-color: #F2F2F2;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 15px;
+    box-shadow: 5px 10px 18px #888888;
+  }
+  
+  .popup-title {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .popup-body {
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .popup-button {
+    background-color: #337ab7;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .like-section, .comment-section {
+    background-color: #E8E8E8;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  .like-button, .comment-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .comment-form {
+    background-color: #fff;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  .comment-submit {
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+  }
+  

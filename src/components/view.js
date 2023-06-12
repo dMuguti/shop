@@ -6,9 +6,8 @@ const View = () => {
   const [selectedPost, setSelectedPost] = useState(null);
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
-  const [likeCount, setLikeCount] = useState(0);
-  const [comment, setComment] = useState('');
   const [showComment, setShowComment] = useState(false);
+  const [comment, setComment] = useState('');
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -19,7 +18,8 @@ const View = () => {
           },
         });
         const data = await response.json();
-        setPosts(data);
+        const posts = data.map((post) => ({ ...post, likeCount: 0, comment: '' }));
+        setPosts(posts);
       } catch (error) {
         console.error('Failed to fetch posts', error);
       }
@@ -30,19 +30,29 @@ const View = () => {
 
   const handlePostClick = (post) => {
     setSelectedPost(post);
+    setComment('');
   };
 
-  const handleLike = () => {
-    setLikeCount((prevCount) => prevCount + 1);
+  const handleLike = (post) => {
+    const updatedPosts = posts.map((p) =>
+      p.id === post.id ? { ...p, likeCount: p.likeCount + 1 } : p
+    );
+    setPosts(updatedPosts);
+    setSelectedPost(updatedPosts.find((p) => p.id === post.id));
   };
 
   const handleComment = () => {
     setShowComment(true);
   };
 
-  const handleCommentSubmit = () => {
+  const handleCommentSubmit = (post, comment) => {
+    const updatedPosts = posts.map((p) =>
+      p.id === post.id ? { ...p, comment } : p
+    );
+    setPosts(updatedPosts);
+    setSelectedPost(updatedPosts.find((p) => p.id === post.id));
     setShowComment(false);
-    
+    setComment('');
   };
 
   const handleSubmit = async (event) => {
@@ -89,10 +99,10 @@ const View = () => {
             Back
           </button>
           <div className="like-section">
-            <button onClick={handleLike} className="like-button">
+            <button onClick={() => handleLike(selectedPost)} className="like-button">
               Like
             </button>
-            <p className="like-count">{likeCount} Likes</p>
+            <p className="like-count">{selectedPost.likeCount} Likes</p>
           </div>
           <div className="comment-section">
             <button onClick={handleComment} className="comment-button">
@@ -106,14 +116,14 @@ const View = () => {
                   onChange={(e) => setComment(e.target.value)}
                   placeholder="Type your comment"
                 />
-                <button onClick={handleCommentSubmit} className="comment-submit">
+                <button onClick={() => handleCommentSubmit(selectedPost, comment)} className="comment-submit">
                   Submit
                 </button>
               </div>
             )}
-            {comment && (
+            {selectedPost.comment && (
               <div className="comment-display">
-                <p>Your Comment: {comment}</p>
+                <p>Your Comment: {selectedPost.comment}</p>
               </div>
             )}
           </div>
@@ -131,7 +141,6 @@ const View = () => {
               </div>
             ))}
           </div>
-
         </div>
       )}
     </div>

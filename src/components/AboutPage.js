@@ -5,7 +5,7 @@ import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/fre
 const AboutPage = () => {
   return (
     <div>
-      <h2>About My Blog</h2>
+      <h2>PostMaster</h2>
       <p>Welcome to PostMaster - your one-stop destination for inspiring stories, thought-provoking insights, and informative articles.</p>
       <p>Since its inception, PostMaster has been a place to share ideas and insights, challenge conventions, and provoke conversations. With a diverse range of topics covered, there's something for everyone here, whether you're seeking personal growth advice, current events analysis, or lifestyle tips.</p>
       <p>We are committed to providing high-quality content that enlightens, inspires, and informs. Our authors are passionate about sharing their unique perspectives and experiences, and we hope you find their stories engaging and insightful.</p>
