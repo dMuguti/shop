@@ -121,7 +121,7 @@ const View = () => {
           <button onClick={() => setSelectedPost(null)} className="popup-button">
             Back
           </button>
-          <button onClick={() => handleDelete(selectedPost)} className="popup-button">
+          <button onClick={() => handleDelete(selectedPost)} className="popup-button delete">
             Delete
           </button>
           <div className="like-section">
