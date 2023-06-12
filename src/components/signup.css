@@ -1,21 +1,25 @@
-/* SignupPage css */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:600|Work+Sans:400,500,600,700&display=swap');
 
-.signup-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
+body{
   background: rgb(34,193,195);
-  background: linear-gradient(135deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
-  border-radius: 25px;
-  position: relative;
+  background: linear-gradient(135deg, rgba(34,193,195,1) 0%,     rgba(253,187,45,1) 100%);
+  font-family: "work sans";
+}
+html{
+  font-size: 100%;
+}
+
+.formCenter {
   max-width: 800px;
   width: 30%;
   height: 60%;
   margin: 100px auto;
+  background-color: #FFFFFF;
+  border-radius: 25px;
+  position: relative;
 }
 
-.signup-form {
+.formFields {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,43 +28,77 @@
   margin-top: 20px; 
 }
 
-.signup-form input {
+.formField {
+  margin: 10px 0;
+}
+
+.formFieldLabel {
+  align-self: start;
+  padding-left: 4.5rem;
+  padding-bottom: 0.5rem;
+  color: #C5C6C7; 
+  display: block;
+}
+
+.formFieldInput {
   width: 80%;
   box-sizing: border-box;
   border: none;
   font-size: 1.3rem;
   padding-left: 1.5rem;
   padding-bottom: 1rem;
-  box-shadow: inset 0px -3px 0px 0px rgba(187,187,187,0.2);
+  box-shadow: inset 0px -3px 0px 0px #C5C6C7; 
   transition: box-shadow 0.2s ease-in;
   margin-bottom: 10px;
+  background: #1F2833; 
+  color: #66FCF1; 
 }
 
-.signup-form input:focus{
-   box-shadow: inset 0px -3px 0px 0px rgba(34,193,195,0.7);
+.formFieldInput:focus{
+   box-shadow: inset 0px -3px 0px 0px #66FCF1; 
    outline: none;
 }
 
-.signup-form button {
+.formFieldInput::-webkit-input-placeholder{
+  opacity: 1;
+  transition: opacity 0.25s ease-out;
+  color: #C5C6C7; 
+}
+
+.formFieldInput:hover::-webkit-input-placeholder,
+.formFieldInput:focus::-webkit-input-placeholder{
+  opacity: 0;
+}
+
+.formFieldButton {
   border-radius: 25px;
   width: 80%;
   height: 40px;
-  border: none;
-  cursor: pointer;
-  font-size: 1.6rem;
-  padding: 0.8rem 1.3rem;
-  margin-top: 1.5rem;
-  background-color: #007bff;
-  color: #fff;
-  transition: background-color 0.2s;
+  background-color: #66FCF1; 
+  color: #1F2833; 
 }
 
-.signup-form button:hover {
-  background-color: #0056b3;
+.formFieldCheckboxLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  font-size: 0.8em; 
+  color: #C5C6C7; 
 }
 
-.signup-form h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 24px;
+.formField {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  margin: 10px 0;
+}
+
+.formFieldButton {
+  display: flex;
+  justify-content: center; 
+  border-radius: 25px;
+  width: 80%;
+  height: 40px;
+  background-color: #45A29E; 
+  color: #1F2833; 
 }

@@ -39,8 +39,9 @@ npm start
 ## Live Link
 Or you can access the web application directly via this https://shop-blog-two.vercel.app/
 *****
-## Dependencies
-Google chrome
+## Backend Link
+https://github.com/dMuguti/sinatra-react-project
+
 
 
 *****
@@ -49,6 +50,7 @@ Google chrome
 2. CSS
 3. JavaScript
 4. JSON
+5. Sinatra
 *****
 ## Contact Information
 omiahderek56@gmail.com

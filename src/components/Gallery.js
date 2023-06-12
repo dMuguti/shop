@@ -1,4 +1,3 @@
-// Gallery.js
 import React, { useState } from 'react';
 import './Gallery.css';
 
@@ -20,7 +19,7 @@ const Gallery = () => {
 
     return (
         <div className="gallery-container" style={{backgroundImage: `url(${images[currentImage]})`}}>
-            <button className="change-image-button" onClick={nextImage}>Next Image</button>
+            <button className="change-image-button" onClick={nextImage}>&rarr;</button>
         </div>
     );
 }

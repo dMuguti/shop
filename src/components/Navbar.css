@@ -1,43 +1,60 @@
 /* Navbar.css */
 
-/* Navbar.css */
-
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5em 1em;
-    background: url(https://assets.startbootstrap.com/img/meta/products/twitter/twitter-image-grayscale.png);
-    box-shadow: 0 2px 15px 0 rgba(0,0,0,.1);
-    width: 100%;
-    position: fixed; 
-    top: 0; 
-    z-index: 999; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  background: #1F2833; /* Dark Navy Color */
+  box-shadow: 0 4px 2px -2px rgba(0,0,0,0.2);
+  width: 100%;
+  position: fixed; 
+  top: 0; 
+  z-index: 999; 
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-logo {
+  font-size: 1.8em;
+  color: #66FCF1; /* Neon Blue Color */
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-logo a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2em;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #C5C6C7; /* Light Gray Color */
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #45A29E; /* Sea Green Color */
+  transform: scale(1.1); /* Slightly increase the size */
+}
+
+.nav-logo:hover {
+  color: #45A29E; /* Sea Green Color */
+}
+
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+      padding: 1em;
   }
-  
-  .nav-logo {
-    font-size: 1.5em;
-    color: white;
-  }
-  
-  .nav-logo a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-  }
-  
+
   .nav-links {
-    display: flex;
-    gap: 1em;
+      gap: 1em;
+      margin-top: 1em;
   }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: white;
-    transition: color 0.3s ease-in-out;
-  }
-  
-  .nav-links a:hover {
-    color: #ff6e7f;
-  }
-  
+}
